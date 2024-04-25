@@ -1,8 +1,15 @@
+# Commands to run
+# in test_cases directory run:
+# chmod +x run_test_cases.sh   
+# to compile the shell and to run the script run
+# ./run_test_cases.sh
+
+
 #!/bin/bash
 
 # Define your test cases here
-test_case_1_input="input1.txt"
-test_case_1_output="output1.txt"
+test_case_1_input="input2.txt"
+test_case_1_output="output2.txt"
 
 # Add more test cases as needed
 
@@ -11,8 +18,12 @@ code_command="python ../exact_solution.py"
 
 # Function to compare output with expected output
 check_output() {
-    actual=$(echo "$1" | $code_command)
+    actual=$($code_command < "$1")
     expected=$(< "$2")
+    echo "Actual:" 
+    echo $actual
+    echo "Expected:" 
+    echo $expected
 
     if [ "$actual" == "$expected" ]; then
         echo "Test passed"
@@ -24,13 +35,16 @@ check_output() {
 # Run test cases one by one
 echo "Running test cases..."
 
-# Test case 1
+# Test Case 1
 echo "Test case 1:"
-check_output "$test_case_1_input" "$test_case_1_output"
+check_output "input1.txt" "output1.txt"
+echo ""
 
-# # Test case 2
-# echo "Test case 2:"
-# $code_command < $test_case_2
+
+# Test case 2
+echo "Test case 2:"
+check_output "input2.txt" "output2.txt"
+echo ""
 
 # Add more test cases as needed
 
