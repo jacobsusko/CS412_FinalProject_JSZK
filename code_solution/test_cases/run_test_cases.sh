@@ -14,7 +14,7 @@ test_case_1_output="output2.txt"
 # Add more test cases as needed
 
 # Define the command to run your code
-code_command="python ../exact_solution.py"
+code_command="python ../cs412_longestpath_exact.py"
 
 # Function to compare output with expected output
 check_output() {
