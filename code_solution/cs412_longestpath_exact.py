@@ -51,9 +51,10 @@ def recurDFS(graph, current, end, path, weight, visited, paths):
     
     visited.add(current)
     for dest in graph[current]:
-        new_path = path + [dest]
-        new_weight = weight + graph[current][dest]
-        recurDFS(graph, dest, end, new_path, new_weight, visited, paths)
+        if dest not in visited:
+            new_path = path + [dest]
+            new_weight = weight + graph[current][dest]
+            recurDFS(graph, dest, end, new_path, new_weight, visited, paths)
     visited.remove(current)
 
 
