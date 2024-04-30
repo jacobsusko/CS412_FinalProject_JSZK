@@ -54,9 +54,19 @@ echo "Test case 3:"
 check_output "input3.txt" "output3.txt"
 echo ""
 
-# Test case 5
+# Test case 4
 echo "Test case 4:"
 check_output "input4.txt" "output4.txt"
+echo ""
+
+# Test case 5
+echo "Test case 5:"
+check_output "input5.txt" "output5.txt"
+echo ""
+
+# Test case 6
+echo "Test case 6:"
+check_output "input6.txt" "output6.txt"
 echo ""
 
 echo "All test cases completed."
