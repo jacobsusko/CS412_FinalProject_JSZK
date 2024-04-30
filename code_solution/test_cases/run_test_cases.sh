@@ -7,10 +7,6 @@
 
 #!/bin/bash
 
-# Define your test cases here
-test_case_1_input="input2.txt"
-test_case_1_output="output2.txt"
-
 # Add more test cases as needed
 
 # Define the command to run your code
@@ -18,12 +14,20 @@ code_command="python ../cs412_longestpath_exact.py"
 
 # Function to compare output with expected output
 check_output() {
+    start_time=$(date +%s.%N)
     actual=$($code_command < "$1")
+    end_time=$(date +%s.%N)
+    execution_time=$(echo "$end_time - $start_time" | bc)
+    min_time=$(echo "$execution_time / 60.0" | bc)
+    seconds=$(echo "$execution_time % 60" | bc)
+
     expected=$(< "$2")
     echo "Actual:" 
     echo $actual
     echo "Expected:" 
     echo $expected
+    echo "Run Time:"
+    echo $min_time "minutes" $seconds "seconds"
 
     if [ "$actual" == "$expected" ]; then
         echo "Test passed"
@@ -40,12 +44,19 @@ echo "Test case 1:"
 check_output "input1.txt" "output1.txt"
 echo ""
 
-
 # Test case 2
 echo "Test case 2:"
 check_output "input2.txt" "output2.txt"
 echo ""
 
-# Add more test cases as needed
+# Test case 3
+echo "Test case 3:"
+check_output "input3.txt" "output3.txt"
+echo ""
+
+# Test case 5
+echo "Test case 4:"
+check_output "input4.txt" "output4.txt"
+echo ""
 
 echo "All test cases completed."
