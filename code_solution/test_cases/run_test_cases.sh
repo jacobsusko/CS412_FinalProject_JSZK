@@ -7,10 +7,15 @@
 
 #!/bin/bash
 
-# Add more test cases as needed
+# Check if the filename argument is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
 
 # Define the command to run your code
-code_command="python ../cs412_longestpath_exact.py"
+filename="$1"
+code_command="python ../$filename"
 
 # Function to compare output with expected output
 check_output() {
