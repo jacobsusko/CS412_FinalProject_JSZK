@@ -7,10 +7,15 @@
 
 #!/bin/bash
 
-# Add more test cases as needed
+# Check if the filename argument is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
 
 # Define the command to run your code
-code_command="python ../cs412_longestpath_exact.py"
+filename="$1"
+code_command="python ../$filename"
 
 # Function to compare output with expected output
 check_output() {
@@ -54,9 +59,19 @@ echo "Test case 3:"
 check_output "input3.txt" "output3.txt"
 echo ""
 
-# Test case 5
+# Test case 4
 echo "Test case 4:"
 check_output "input4.txt" "output4.txt"
+echo ""
+
+# Test case 5
+echo "Test case 5:"
+check_output "input5.txt" "output5.txt"
+echo ""
+
+# Test case 6
+echo "Test case 6:"
+check_output "input6.txt" "output6.txt"
 echo ""
 
 echo "All test cases completed."
