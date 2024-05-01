@@ -25,10 +25,11 @@ def main():
 
 def greedy_search(adj_list, start):
     visited = set()
+    visited.add(start)
     path = [start]
     total = 0
 
-    while len(visited) < len(adj_list) - 1:
+    while len(visited) < len(adj_list):
         if start not in adj_list:
             break
         max = -1

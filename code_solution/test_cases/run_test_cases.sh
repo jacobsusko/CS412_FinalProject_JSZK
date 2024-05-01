@@ -44,34 +44,71 @@ check_output() {
 # Run test cases one by one
 echo "Running test cases..."
 
-# Test Case 1
-echo "Test case 1:"
-check_output "input1.txt" "output1.txt"
-echo ""
+if filename =="cs412_longestpath_exact.py"
+then
+    echo "Testing the exact solution"
 
-# Test case 2
-echo "Test case 2:"
-check_output "input2.txt" "output2.txt"
-echo ""
+    # Test Case 1
+    echo "Test case 1:"
+    check_output "input1.txt" "output1.txt"
+    echo ""
 
-# Test case 3
-echo "Test case 3:"
-check_output "input3.txt" "output3.txt"
-echo ""
+    # Test case 2
+    echo "Test case 2:"
+    check_output "input2.txt" "output2.txt"
+    echo ""
 
-# Test case 4
-echo "Test case 4:"
-check_output "input4.txt" "output4.txt"
-echo ""
+    # Test case 3
+    echo "Test case 3:"
+    check_output "input3.txt" "output3.txt"
+    echo ""
 
-# Test case 5
-echo "Test case 5:"
-check_output "input5.txt" "output5.txt"
-echo ""
+    # Test case 4
+    echo "Test case 4:"
+    check_output "input4.txt" "output4.txt"
+    echo ""
 
-# Test case 6
-echo "Test case 6:"
-check_output "input6.txt" "output6.txt"
-echo ""
+    # Test case 5
+    echo "Test case 5:"
+    check_output "input5.txt" "output5.txt"
+    echo ""
+
+    # Test case 6
+    echo "Test case 6:"
+    check_output "input6.txt" "output6.txt"
+    echo ""
+else
+    echo "Testing the approximate solution"
+
+    # Test Case 1
+    echo "Test case 1:"
+    check_output "input1.txt" "approx_output1.txt"
+    echo ""
+
+    # Test case 2
+    echo "Test case 2:"
+    check_output "input2.txt" "approx_output2.txt"
+    echo ""
+
+    # Test case 3
+    echo "Test case 3:"
+    check_output "input3.txt" "approx_output3.txt"
+    echo ""
+
+    # Test case 4
+    echo "Test case 4:"
+    check_output "input4.txt" "approx_output4.txt"
+    echo ""
+
+    # Test case 5
+    echo "Test case 5:"
+    check_output "input5.txt" "approx_output5.txt"
+    echo ""
+
+    # Test case 6
+    echo "Test case 6:"
+    check_output "input6.txt" "approx_output6.txt"
+    echo ""
+fi
 
 echo "All test cases completed."
