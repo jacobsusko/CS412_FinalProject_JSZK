@@ -16,10 +16,10 @@ def main():
 
     total, path = greedy_search(adj_list, start)
     print(total)
-    for i in path:
-        if i != path[0]:
+    for i in range(len(path)):
+        if i != 0:
             print(end=" ")
-        print(i, end="")
+        print(path[i], end="")
     print()
 
 
